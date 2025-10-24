@@ -1,4 +1,0 @@
-fileignoreconfig:
-- filename: all_code.py
-  checksum: 98be9457bf9320236497b733bd135eab16f296413c843a9b8151ff1d50a0e874
-version: "1.0"
