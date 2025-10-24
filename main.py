@@ -1,16 +1,23 @@
-# This is a sample Python script.
+from fastapi import FastAPI, Request
 
-# Press ⌃R to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
+app = FastAPI(title="Hotel WhatsApp Chatbot")
+user_sessions = {}
+
+@app.post("/webhook")
+async def whatsapp_webhook(request: Request):
+    """Handle incoming WhatsApp messages from Twilio"""
+    form_data = await request.form()
+
+    incoming_msg = form_data.get("Body", "").strip()
+    from_number = form_data.get("From", "")
+
+    print(incoming_msg, from_number)
+
+    return incoming_msg, from_number
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press ⌘F8 to toggle the breakpoint.
+if __name__ == "__main__":
+    import uvicorn
 
+    uvicorn.run(app, host="0.0.0.0", port=8000)
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/

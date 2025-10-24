@@ -1,4 +1,3 @@
-flask
 twilio
 langchain
 langchain-google-genai
@@ -6,3 +5,8 @@ langgraph
 gspread
 google-auth
 python-dotenv
+fastapi
+uvicorn
+oauth2client
+ngrok
+multipart
