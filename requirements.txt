@@ -10,3 +10,4 @@ uvicorn
 oauth2client
 ngrok
 multipart
+urllib3
