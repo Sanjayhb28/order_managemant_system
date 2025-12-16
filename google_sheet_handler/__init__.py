@@ -38,7 +38,7 @@ def get_menu_text_from_sheet():
 
         menu_text = "🍽️ **HOTEL MENU** 🍽️\n\n"
         for item in menu_data:
-            menu_text += f"📌 *{item['Item']}*\n"
+            menu_text += f"📌 *{item['Item']}*\t"
             menu_text += f"   ₹{item['Price']} \n"
 
         return menu_text
@@ -72,4 +72,4 @@ def save_order_to_sheet():
         return False
 
 if __name__ == "__main__":
-    print(save_order_to_sheet())
+    print(get_menu_text_from_sheet())
