@@ -9,7 +9,7 @@ def get_menu() -> str:
 
 @tool
 def place_order(customer_name: str, phone_number: str, room_number: str,
-                items: str, special_instructions: str = "") -> str:
+                items: list[dict], special_instructions: str = "") -> str:
     """
     Place an order for the customer.
 
@@ -17,12 +17,12 @@ def place_order(customer_name: str, phone_number: str, room_number: str,
         customer_name: Customer's name
         phone_number: Customer's phone number
         room_number: Hotel room number
-        items: JSON string of ordered items with quantities
+        items: JSON string of ordered items with quantities (e.g., '[{"item": "Burger", "quantity": 2}, {"item": "Fries", "quantity": 1}]')
         special_instructions: Any special requests
     """
     try:
         print(customer_name, phone_number, room_number, items, special_instructions)
-        items_list = json.loads(items)
+        items_list = items #json.loads(items)
         print(items_list)
 
         # Calculate total (in production, fetch prices from sheet)
