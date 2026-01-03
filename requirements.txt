@@ -9,5 +9,5 @@ fastapi
 uvicorn
 oauth2client
 ngrok
-multipart
+python-multipart
 urllib3

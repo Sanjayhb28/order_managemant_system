@@ -37,6 +37,9 @@ async def whatsapp_webhook(request: Request):
     # Get the last AI message
     ai_response = result["messages"][-1].content
     print(ai_response)
+    if type(ai_response) != str:
+        ai_response = ai_response[0]["text"]
+        print(ai_response)
 
     # Update session with full conversation
     session["messages"] = result["messages"]

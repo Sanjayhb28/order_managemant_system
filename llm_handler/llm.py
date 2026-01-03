@@ -54,7 +54,9 @@ def call_model(state: AgentState):
         - Items and quantities
         - Any special instructions
 
-        Use the available tools to fetch menu information and place orders.""")
+        Use the available tools to fetch menu information and place orders.
+        
+        The output should only be human readable text, There should not be any extra content in it.""")
         messages = [system_message] + messages
 
     response = llm.bind_tools([get_menu, get_item_details, place_order]).invoke(messages)
