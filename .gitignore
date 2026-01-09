@@ -2,5 +2,5 @@
 .talismanrc
 credentials.json
 .env
-/.venv
+.venv
 /venv
