@@ -9,6 +9,6 @@ Instructions on how to install and set up the project.
 ## Usage
 Instructions on how to use the project.
 1. Run the main script: ` uvicorn main:app --reload --port 8000`
-2.  ngrok config add-authtoken 34VufDPwxesGyhUfXfA0RBmzXAK_3KBvmya9KpMa1cqgXBAkp
+2.  ngrok config add-authtoken <token>
 3.  ngrok http 8000 
 
